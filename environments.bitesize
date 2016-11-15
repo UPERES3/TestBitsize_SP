@@ -1,0 +1,12 @@
+project: yathu-dev
+environments:
+  - name: production
+    namespace: yathu-dev
+    deployment:
+      method: rolling-upgrade
+    services:
+      - name: docs-app
+        external_url: kubecon.dev-bite.io
+        port: 80 # this is the port number the application responds on in each container/instance/pod
+        ssl: "true"
+        replicas: 2
